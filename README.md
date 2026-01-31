@@ -2,7 +2,8 @@
 A simple plug and play discord chat moderation bot created with python.
 
 ### functions
-1. autonomously moderates chat channels for profanities
+1. autonomously moderates chat channels for hate speech / racial slurs
+        while allowing general profanity usage
 2. sends a warning message to offending user and deletes the message
 3. maintains database of offenses
 4. upon reaching 3 warnings, the offending user is banned from the server
