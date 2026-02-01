@@ -1,9 +1,9 @@
 # Nightshade bot
 A simple plug and play discord chat moderation bot created with python.
 
-![Nightshade bot icon](icon\icon.png)
+![Nightshade bot icon](./icon/icon.png)
 
-### functions
+## functions
 1. autonomously moderates chat channels for hate speech / racial slurs
         while allowing general profanity usage
 2. sends a warning message to offending user and deletes the message
