@@ -1,16 +1,18 @@
 import os
 import discord
+import sqlite3
+import logging
 from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
-import sqlite3
 from keep_alive import keep_alive
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-profanities = ['nigger', 'nigg3r', 'n1gg3r', 'n1gger', 'spic', 'sp1c', 'chink', 'ch1nk', 'gook',
-               'g00k', 'wetback', 'beaner', 'kike', 'gringo', 'honky', 'faggot', 'f@ggot', 'f@gg0t',
-               'fagg0t', 'cocksucker', 'c0cksucker', 'c0cksuck3r', 'cocksuck3r', 'dyke', 'cunt']
+profanities = [
+    'nigger', 'nigg3r', 'n1gg3r', 'n1gger', 'spic', 'sp1c', 'chink', 'ch1nk', 'gook',
+    'g00k', 'wetback', 'beaner', 'kike', 'gringo', 'honky', 'faggot', 'f@ggot', 'f@gg0t',
+    'fagg0t', 'cocksucker', 'c0cksucker', 'c0cksuck3r', 'cocksuck3r', 'dyke', 'cunt']
 
 def create_user_table():
     connection = sqlite3.connect(f'{BASE_DIR}\\user_warnings_db')
@@ -69,6 +71,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 keep_alive()
 
+handler = logging.FileHandler('discord.log', encoding = 'utf-8', mode = 'w')
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -99,4 +102,4 @@ async def on_message(message):
             
     await bot.process_commands(message)
                 
-bot.run(TOKEN)
+bot.run(TOKEN, log_handler = handler, log_level = logging.DEBUG)
