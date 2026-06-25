@@ -1,5 +1,3 @@
-Below is a generic Terms of Service template for your Discord bot, **Nightshade**. This is a general-purpose template and is not legal advice. If you intend to make the bot publicly available or operate in jurisdictions with specific privacy regulations, you should consider having it reviewed by a legal professional.
-
 # Nightshade Terms of Service
 
 **Effective Date:** June 25, 2026
